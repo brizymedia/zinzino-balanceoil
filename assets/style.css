@@ -176,7 +176,7 @@ main{position:relative;z-index:1}
 /* ---------- 정적 히어로 (5게이트, CSS와 JS 동일 조건) ---------- */
 .static-hero{display:none;position:relative;min-height:100svh;overflow:hidden}
 .static-hero .bg{position:absolute;inset:0;background-size:cover;background-position:center 70%}
-.static-hero .veil{position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,20,29,.55) 0%,rgba(11,20,29,.24) 40%,rgba(11,20,29,.86) 100%)}
+.static-hero .veil{position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,20,29,.55) 0%,rgba(11,20,29,.22) 34%,rgba(11,20,29,.72) 58%,rgba(11,20,29,.93) 100%)}
 .static-hero .inner{position:relative;z-index:2;display:flex;flex-direction:column;justify-content:flex-end;
   min-height:100svh;padding:110px clamp(20px,6vw,60px) 64px;text-shadow:var(--tshadow)}
 .static-hero h1{font-family:var(--font-d);font-weight:700;font-size:clamp(30px,8.4vw,54px);line-height:1.4}
