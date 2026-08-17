@@ -570,13 +570,13 @@ details .a{padding:0 24px 22px;color:var(--text-secondary);font-size:14.5px;max-
 /* ---------- 구매 띠 ---------- */
 .buyband{padding-top:0;padding-bottom:0}
 .buyband-box{
-  display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;
+  display:flex;flex-direction:column;align-items:center;text-align:center;gap:22px;
   border:1px solid var(--accent-muted);border-radius:20px;
-  background:linear-gradient(110deg,rgba(233,169,61,.12),rgba(18,33,44,.7) 60%);
-  padding:clamp(26px,4vw,40px);
+  background:linear-gradient(160deg,rgba(233,169,61,.12),rgba(18,33,44,.7) 60%);
+  padding:clamp(30px,4.5vw,46px);
 }
 .buyband-box h2{font-family:var(--font-d);font-weight:700;font-size:clamp(20px,2.6vw,29px);line-height:1.5}
-.buyband-box p{margin-top:8px;color:var(--text-secondary);font-size:14.5px}
+.buyband-box p{margin-top:8px;color:var(--text-secondary);font-size:14.5px;max-width:44ch;margin-left:auto;margin-right:auto}
 .buyband-box .btn{white-space:nowrap}
 
 /* ---------- 주문 페이지 ---------- */
