@@ -263,13 +263,9 @@
   }).observe(hero);
 
   /* ---------- 5게이트 (CSS와 문자 단위 동일) ---------- */
-  var GATES = [
-    '(max-width: 720px)',
-    '(orientation: portrait) and (max-width: 1024px)',
-    '(orientation: portrait) and (pointer: coarse)',
-    '(orientation: landscape) and (pointer: coarse) and (max-height: 560px)',
-    '(prefers-reduced-motion: reduce)'
-  ];
+  /* CSS 의 정적 히어로 미디어쿼리와 글자 하나까지 같아야 한다.
+     휴대폰도 스크롤 영상을 보고, 모션 최소화 설정에서만 정적 화면으로 간다. */
+  var GATES = ['(prefers-reduced-motion: reduce)'];
   function enableScrub() {
     if (scrubOn) return; scrubOn = true;
     initHeroOnce();

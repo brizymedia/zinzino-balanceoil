@@ -186,13 +186,38 @@ main{position:relative;z-index:1}
 .static-hero h1{font-family:var(--font-d);font-weight:700;font-size:clamp(30px,8.4vw,54px);line-height:1.4}
 .static-hero .sub{margin-top:14px;max-width:34ch;font-size:16px;color:var(--text-primary)}
 .static-hero .row{margin-top:26px;display:flex;gap:12px;flex-wrap:wrap}
-@media (max-width:720px),
-       (orientation:portrait) and (max-width:1024px),
-       (orientation:portrait) and (pointer:coarse),
-       (orientation:landscape) and (pointer:coarse) and (max-height:560px),
-       (prefers-reduced-motion:reduce){
+/* 정적 히어로는 모션 최소화 설정에서만. 그 외에는 휴대폰도 스크롤 영상을 본다.
+   JS 의 GATES 배열과 글자 하나까지 같아야 한다. */
+@media (prefers-reduced-motion:reduce){
   .hero{display:none}
   .static-hero{display:block}
+}
+
+/* ---------- 휴대폰 스크롤 히어로 ----------
+   세로 화면에 16:9 를 꽉 채우면 좌우가 잘려 원료가 흘러드는 장면이 사라진다.
+   그래서 자르지 않고 영상 전체를 위쪽에 두고, 글자는 아래 빈 공간에 놓는다. */
+@media (max-width:820px) and (orientation:portrait){
+  .hero{height:560vh}
+  .stage video,.stage .poster{
+    height:auto;top:19vh;bottom:auto;aspect-ratio:16/9;object-fit:contain;
+    background-size:contain;background-repeat:no-repeat;background-position:center
+  }
+  .scrim{background:radial-gradient(ellipse 150% 60% at 50% 34%,rgba(8,13,19,0) 40%,rgba(8,13,19,.5) 100%)}
+  /* 글자는 영상 바로 아래로. 56.25vw 가 16:9 영상의 높이다 */
+  .band.b-left,.band.b-right,.band.b-settle{
+    left:0;right:0;bottom:auto;transform:none;
+    top:calc(19vh + 56.25vw + 30px);
+    width:auto;max-width:none;text-align:center;padding:0 22px
+  }
+  .band .kicker{margin-bottom:10px}
+  .b-left p.big,.b-right p.big{font-size:clamp(21px,5.6vw,27px)}
+  .b-settle h1{font-size:clamp(27px,7.4vw,38px)}
+  .b-settle .sub{font-size:15px}
+  .b-settle .row{margin-top:20px}
+  .band::before{inset:-16% -8%;filter:blur(30px)}
+  .chip{left:50%;transform:translateX(-50%);bottom:5vh}
+  .ring{right:16px;bottom:5vh}
+  .cue{bottom:5vh}
 }
 
 /* ---------- 섹션 공통 ---------- */
