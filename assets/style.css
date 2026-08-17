@@ -70,7 +70,6 @@ main{position:relative;z-index:1}
 }
 .nav .brand{display:flex;align-items:baseline;gap:10px;text-decoration:none}
 .nav .brand b{font-family:var(--font-d);font-weight:700;font-size:17px;letter-spacing:.04em}
-.nav .brand span{font-family:var(--font-m);font-size:11px;color:var(--accent);letter-spacing:.14em}
 .nav ul{display:flex;gap:clamp(10px,2.4vw,28px);list-style:none;align-items:center}
 .nav ul a{text-decoration:none;font-size:14px;color:var(--text-secondary);transition:color .3s var(--ease)}
 .nav ul a:hover{color:var(--text-primary)}
@@ -81,8 +80,6 @@ main{position:relative;z-index:1}
 }
 .nav .cta:hover{background:var(--accent-hover);transform:translateY(-1px)}
 @media (max-width:860px){.nav ul li.hide-m{display:none}}
-/* 아주 좁은 화면에서는 6:3 표시를 접어 상호가 버튼과 부딪히지 않게 한다 */
-@media (max-width:400px){.nav .brand > span{display:none}}
 
 /* ---------- 히어로 (스크럽) ---------- */
 .hero{position:relative;height:520vh}
