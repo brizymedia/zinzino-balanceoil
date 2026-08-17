@@ -400,6 +400,21 @@
   if (reduceMq.addEventListener) reduceMq.addEventListener('change', onReduceFlip);
   else reduceMq.addListener(onReduceFlip);
 
+  /* ---------- 홍보영상: 누르면 그때 유튜브를 불러온다 ---------- */
+  var facade = $('.ytfacade');
+  if (facade) {
+    facade.addEventListener('click', function () {
+      var id = facade.getAttribute('data-yt');
+      var f = document.createElement('iframe');
+      f.src = 'https://www.youtube-nocookie.com/embed/' + id + '?autoplay=1&rel=0&playsinline=1';
+      f.title = '왜 진지노 밸런스오일을 먹어야 할까';
+      f.allow = 'accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture';
+      f.setAttribute('allowfullscreen', '');
+      facade.replaceWith(f);
+      f.focus();
+    });
+  }
+
   /* ---------- 숨은 탭 일시정지 ---------- */
   document.addEventListener('visibilitychange', function () {
     document.body.classList.toggle('paused', document.hidden);
