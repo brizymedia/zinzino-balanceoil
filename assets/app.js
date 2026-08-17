@@ -67,13 +67,30 @@
   var chipVal = $('.chip b');
   var bandEls = [$('#b1'), $('#b2'), $('#b3'), $('#b4')];
 
-  var BANDS = [
+  /* 휴대폰은 마지막 문구가 뜬 뒤 남는 스크롤이 길게 느껴진다.
+     그래서 세로 화면에서는 정착 밴드를 뒤로 미뤄 꼬리를 짧게 만든다. */
+  var PORTRAIT_Q = '(max-width: 820px) and (orientation: portrait)';
+  var BAND_DESKTOP = [
     { a: 0.00, b: 0.20, first: true },
     { a: 0.23, b: 0.46 },
     { a: 0.48, b: 0.68 },
     { a: 0.76, b: 1.00, last: true, settle: true }
   ];
-  BANDS.forEach(function (bd) { bd.op = -1; bd.k = -1; });
+  var BAND_PORTRAIT = [
+    { a: 0.00, b: 0.24, first: true },
+    { a: 0.27, b: 0.52 },
+    { a: 0.55, b: 0.78 },
+    { a: 0.88, b: 1.00, last: true, settle: true }
+  ];
+  var BANDS = [];
+  function applyBandMap() {
+    var src = matchMedia(PORTRAIT_Q).matches ? BAND_PORTRAIT : BAND_DESKTOP;
+    BANDS.length = 0;
+    src.forEach(function (bd) {
+      BANDS.push({ a: bd.a, b: bd.b, first: bd.first, last: bd.last, settle: bd.settle, op: -1, k: -1 });
+    });
+  }
+  applyBandMap();
 
   splitText($('#b2 .fx-target'), 'grid', 22);
   splitText($('#b3 .fx-target'), 'scatter', 33);
@@ -289,6 +306,15 @@
     if (m.addEventListener) m.addEventListener('change', applyHeroMode);
     else m.addListener(applyHeroMode);
   });
+
+  /* 가로세로를 돌리면 밴드 구간도 그 화면에 맞게 다시 잡는다 */
+  var portraitMql = matchMedia(PORTRAIT_Q);
+  function onOrientationFlip() {
+    applyBandMap();
+    if (scrubOn) { updateCaptions(heroProgress()); onScroll(); }
+  }
+  if (portraitMql.addEventListener) portraitMql.addEventListener('change', onOrientationFlip);
+  else portraitMql.addListener(onOrientationFlip);
 
   /* 정적 히어로 배경 (게이트 안쪽에서만 로드) */
   var staticInited = false;
