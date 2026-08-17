@@ -114,6 +114,20 @@
     });
   });
 
+  /* 추천인 코드 복사: 손으로 옮겨 적다 틀리는 일을 막는다 */
+  var codeCopyBtn = document.getElementById('codeCopyBtn');
+  if (codeCopyBtn) {
+    codeCopyBtn.addEventListener('click', function () {
+      var code = document.getElementById('sponsorCode').textContent.trim();
+      copyText(code).then(function () {
+        codeCopyBtn.textContent = '복사했습니다';
+        setTimeout(function () { codeCopyBtn.textContent = '복사'; }, 2200);
+      }).catch(function () {
+        codeCopyBtn.textContent = '길게 눌러 복사';
+      });
+    });
+  }
+
   editBtn.addEventListener('click', function () {
     doneBox.hidden = true;
     form.hidden = false;
