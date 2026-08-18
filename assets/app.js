@@ -109,9 +109,11 @@
   })();
 
   /* ---------- 히어로 스크럽 ---------- */
-  var VIDEO_URL = 'assets/hero-scrub.mp4';
-  var VIDEO_BYTES = 6193593;
-  var POSTER_URL = 'assets/hero-poster.jpg';
+  /* 화면 크기에 맞는 영상을 고른다. 휴대폰에 데스크톱 영상을 내려보내면
+     받을 필요 없는 화소까지 받느라 느려지고, 앱 안 브라우저에서는 끊긴다. */
+  var SMALL_SCREEN = matchMedia('(max-width: 900px)').matches;
+  var VIDEO_URL = SMALL_SCREEN ? 'assets/hero-scrub-m.mp4' : 'assets/hero-scrub.mp4';
+  var POSTER_URL = SMALL_SCREEN ? 'assets/hero-poster-m.jpg' : 'assets/hero-poster.jpg';
 
   var target = 0, shown = 0, rafId = null, lastTick = 0;
   var heroOnScreen = true, scrubOn = false, videoReady = false;
@@ -153,48 +155,46 @@
     if (ring && ring.parentNode) ring.replaceWith(makeChevron());
   }
 
-  function startBlobFetch() {
+  /* 예전에는 영상 전체를 fetch 로 받아 메모리에 통째로 들고 재생했다.
+     6MB 덩어리를 들고 있으면 카카오톡 같은 앱 안 브라우저에서 끊긴다.
+     이 서버는 구간 요청(Range)을 지원하므로, 브라우저가 알아서 필요한
+     구간만 받아 쓰게 맡긴다. 메모리도 적게 쓰고 훨씬 잘 버틴다. */
+  function startVideoLoad() {
     if (started) return;
     started = true;
-    loadHeroBlob().catch(failVideo);
-  }
 
-  function loadHeroBlob() {
-    var ctrl = new AbortController();
-    var watchdog = setTimeout(function () { ctrl.abort(); }, 20000);
-    return fetch(VIDEO_URL, { priority: 'low', signal: ctrl.signal }).then(function (res) {
-      if (!res.ok || !res.body) throw new Error('video http ' + res.status);
-      var total = Number(res.headers.get('Content-Length')) || VIDEO_BYTES;
-      var reader = res.body.getReader();
-      var chunks = [], got = 0, lastRing = 0;
-      function pump() {
-        return reader.read().then(function (r) {
-          if (r.done) return;
-          clearTimeout(watchdog);
-          watchdog = setTimeout(function () { ctrl.abort(); }, 20000);
-          chunks.push(r.value);
-          got += r.value.length;
-          var frac = Math.min(1, got / total);
-          var now = performance.now();
-          if (now - lastRing > 100 || frac === 1) {
-            lastRing = now;
-            if (ring) ring.style.setProperty('--ld', Math.round(126 * (1 - frac)));
-          }
-          return pump();
-        });
-      }
-      return pump().then(function () {
-        clearTimeout(watchdog);
-        if (ring) { ring.style.setProperty('--ld', 0); ring.style.opacity = 0; }
-        video.src = URL.createObjectURL(new Blob(chunks, { type: 'video/mp4' }));
-        video.load();
-        video.addEventListener('canplay', function () {
-          videoReady = true;
-          requestSeek(heroProgress() * video.duration);
-          stage.classList.add('video-ready');
-        }, { once: true });
-      });
-    });
+    var settledOnce = false;
+    function ready() {
+      if (settledOnce) return;
+      settledOnce = true;
+      clearTimeout(watchdog);
+      videoReady = true;
+      if (ring) { ring.style.setProperty('--ld', 0); ring.style.opacity = 0; }
+      requestSeek(heroProgress() * video.duration);
+      stage.classList.add('video-ready');
+    }
+
+    /* 받은 만큼 링을 채운다 */
+    function paintRing() {
+      if (!ring || !video.duration) return;
+      var end = 0;
+      try { if (video.buffered.length) end = video.buffered.end(video.buffered.length - 1); } catch (e) { return; }
+      var frac = Math.min(1, end / video.duration);
+      ring.style.setProperty('--ld', Math.round(126 * (1 - frac)));
+    }
+
+    var watchdog = setTimeout(function () {
+      if (!settledOnce) failVideo();
+    }, 25000);
+
+    video.addEventListener('progress', paintRing);
+    video.addEventListener('loadedmetadata', paintRing);
+    video.addEventListener('canplay', ready, { once: true });
+    video.addEventListener('loadeddata', ready, { once: true });
+
+    video.preload = 'auto';
+    video.src = VIDEO_URL;
+    video.load();
   }
 
   function initHeroOnce() {
@@ -202,10 +202,10 @@
     heroInited = true;
     posterLayer.style.backgroundImage = "url('" + POSTER_URL + "')";
     var img = new Image();
-    img.onload = startBlobFetch;
-    img.onerror = startBlobFetch;
+    img.onload = startVideoLoad;
+    img.onerror = startVideoLoad;
     img.src = POSTER_URL;
-    setTimeout(startBlobFetch, 4000);
+    setTimeout(startVideoLoad, 4000);
     /* 밴드1 로드 램프: 시간 기반 1회 */
     loadK0 = performance.now();
     requestAnimationFrame(loadTick);
