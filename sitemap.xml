@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://www.zinzinoshop.co.kr/</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://www.zinzinoshop.co.kr/assets/hero-ending.jpg</image:loc>
+      <image:title>진지노 밸런스 오일 플러스</image:title>
+      <image:caption>진지노 밸런스 오일 플러스 병, 북해 위 황금빛 오일</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.zinzinoshop.co.kr/assets/product-lineup.jpg</image:loc>
+      <image:title>진지노 밸런스 오일 제품군</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.zinzinoshop.co.kr/blog/</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.zinzinoshop.co.kr/blog/zinzino-momentum.html</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://www.zinzinoshop.co.kr/assets/app-result.jpg</image:loc>
+      <image:title>진지노 밸런스 테스트 전후 결과</image:title>
+    </image:image>
+  </url>
+</urlset>

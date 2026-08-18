@@ -1,0 +1,22 @@
+# 진지노 밸런스 오일 플러스 | www.zinzinoshop.co.kr
+User-agent: *
+Allow: /
+Disallow: /order.html
+
+# 네이버
+User-agent: Yeti
+Allow: /
+
+# AI 검색 크롤러도 허용 (AI 검색에 노출되도록)
+User-agent: GPTBot
+Allow: /
+User-agent: ChatGPT-User
+Allow: /
+User-agent: PerplexityBot
+Allow: /
+User-agent: ClaudeBot
+Allow: /
+User-agent: Google-Extended
+Allow: /
+
+Sitemap: https://www.zinzinoshop.co.kr/sitemap.xml
