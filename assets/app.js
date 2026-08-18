@@ -339,7 +339,8 @@
       el.classList.add('in');
       io.unobserve(el);
       if (el.classList.contains('rev')) {
-        setTimeout(function () { el.classList.add('done'); }, 1600);
+        /* 'done' 은 구매 페이지의 완료 상자가 쓰는 이름이라 겹치면 안 된다 */
+        setTimeout(function () { el.classList.add('rev-set'); }, 1600);
       }
     });
   }, { threshold: 0.25 });
@@ -404,7 +405,7 @@
   var pinned = [];
   function pinToFinalStates() {
     $$('.rev').forEach(function (el) {
-      if (!el.classList.contains('in')) { el.classList.add('in', 'done'); pinned.push(el); }
+      if (!el.classList.contains('in')) { el.classList.add('in', 'rev-set'); pinned.push(el); }
     });
     $$('.thread, .ratio-vis').forEach(function (el) {
       if (!el.classList.contains('in')) { el.classList.add('in'); pinned.push(el); }
@@ -412,7 +413,7 @@
     if (!holdDone) completeHold();
   }
   function unpinFinalStates() {
-    pinned.forEach(function (el) { el.classList.remove('in', 'done'); io.observe(el); });
+    pinned.forEach(function (el) { el.classList.remove('in', 'rev-set'); io.observe(el); });
     pinned = [];
   }
   function onReduceFlip(e) {
