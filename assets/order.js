@@ -1,15 +1,15 @@
 /* 구매·회원가입 신청 폼
-   서버에 저장하지 않는다. 작성한 내용은 방문자 본인의 문자·카카오톡으로만 나간다. */
+   서버에 저장하지 않는다. 작성한 내용은 방문자 본인의 문자로만 나간다. */
 (function () {
   'use strict';
 
   var TEL = '01076357886';
+  var IS_PHONE = /Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent);
   var form = document.getElementById('orderForm');
   var doneBox = document.getElementById('doneBox');
   var errBox = document.getElementById('formErr');
   var summaryBox = document.getElementById('summaryBox');
   var smsBtn = document.getElementById('smsBtn');
-  var kakaoBtn = document.getElementById('kakaoBtn');
   var copyBtn = document.getElementById('copyBtn');
   var editBtn = document.getElementById('editBtn');
   var copyNote = document.getElementById('copyNote');
@@ -93,16 +93,21 @@
     form.hidden = true;
     doneBox.hidden = false;
     doneBox.scrollIntoView({ block: 'start', behavior: 'smooth' });
-    /* 카카오톡을 고를 사람을 위해 미리 복사해 둔다 */
-    copyText(lastText).catch(function () {});
-  });
 
-  kakaoBtn.addEventListener('click', function () {
-    copyText(lastText).then(function () {
-      copyNote.textContent = '내용을 복사했습니다. 카카오톡 채팅창에 붙여넣기 해주세요.';
-    }).catch(function () {
-      copyNote.textContent = '아래 내용을 길게 눌러 복사한 뒤 채팅창에 붙여넣어 주세요.';
-    });
+    /* PC 에서는 문자 앱이 없어 sms 링크가 아무 일도 하지 않는다.
+       그래서 PC 로 들어온 분에게만 다른 길을 안내한다. */
+    if (!IS_PHONE) {
+      smsBtn.textContent = '내용 복사하고 문자 보내기';
+      copyNote.innerHTML = 'PC 에서는 문자 앱이 열리지 않습니다. 아래 버튼을 누르면 내용이 복사됩니다. ' +
+                           '휴대폰 문자로 <b>010-7635-7886</b> 에 붙여넣어 보내주세요.';
+      smsBtn.addEventListener('click', function (e) {
+        e.preventDefault();
+        copyText(lastText).then(function () {
+          smsBtn.textContent = '복사했습니다';
+          setTimeout(function () { smsBtn.textContent = '내용 복사하고 문자 보내기'; }, 2400);
+        });
+      });
+    }
   });
 
   copyBtn.addEventListener('click', function () {
