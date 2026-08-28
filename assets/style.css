@@ -183,7 +183,7 @@ main{position:relative;z-index:1}
   content:"";position:absolute;left:0;right:0;bottom:0;height:58%;z-index:-1;pointer-events:none;
   background:linear-gradient(180deg,rgba(5,9,14,0) 0%,rgba(5,9,14,.66) 26%,rgba(5,9,14,.88) 55%,rgba(5,9,14,.96) 100%);
 }
-.static-hero h1{font-family:var(--font-d);font-weight:700;font-size:clamp(30px,8.4vw,54px);line-height:1.4}
+.static-hero h1,.static-hero .h1like{font-family:var(--font-d);font-weight:700;font-size:clamp(30px,8.4vw,54px);line-height:1.4}
 .static-hero .sub{margin-top:14px;max-width:34ch;font-size:16px;color:var(--text-primary)}
 .static-hero .row{margin-top:26px;display:flex;gap:12px;flex-wrap:wrap}
 /* 정적 히어로는 모션 최소화 설정에서만. 그 외에는 휴대폰도 스크롤 영상을 본다.
@@ -801,3 +801,15 @@ footer .brandline{font-family:var(--font-d);font-weight:700;font-size:15px;color
 }
 footer .ftlinks a{color:var(--text-secondary);text-decoration:none;border-bottom:1px solid var(--line)}
 footer .ftlinks a:hover{color:var(--accent-hover);border-color:var(--accent)}
+
+/* ---------- 더 읽을거리 ---------- */
+.readgrid{margin-top:44px;display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+@media (max-width:900px){.readgrid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:600px){.readgrid{grid-template-columns:1fr}}
+.readgrid a{display:block;text-decoration:none;color:inherit;border:1px solid var(--line);border-radius:14px;
+  padding:20px 22px;background:var(--panel-2);transition:transform .5s var(--ease),border-color .5s var(--ease)}
+.readgrid a:hover{transform:translateY(-4px);border-color:var(--accent-muted)}
+.readgrid b{display:block;font-family:var(--font-d);font-size:16.5px;font-weight:700;line-height:1.5}
+.readgrid span{display:block;margin-top:8px;font-size:13.5px;color:var(--text-secondary)}
+@media (max-width:700px){.readgrid a{border:none;background:transparent;padding:14px 0;border-bottom:1px solid var(--line);border-radius:0}
+  .readgrid a:hover{transform:none}}
