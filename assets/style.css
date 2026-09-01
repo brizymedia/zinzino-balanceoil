@@ -822,6 +822,8 @@ footer .ftlinks a:hover{color:var(--accent-hover);border-color:var(--accent)}
 @media (max-width:900px){.dgrid{grid-template-columns:1fr;max-width:620px;gap:16px}}
 .dcard{border:1px solid var(--line);border-radius:16px;background:var(--panel-2);padding:26px 24px 28px;
   display:flex;flex-direction:column}
+.dcard .dshot{width:calc(100% + 48px);margin:-26px -24px 20px;height:auto;display:block;
+  border-radius:15px 15px 0 0;background:#0E1A24}
 .dcard .dnum{font-family:var(--font-m);font-size:12px;letter-spacing:.16em;color:var(--accent);margin-bottom:14px}
 .dcard blockquote{margin:0 0 16px;padding-left:14px;border-left:2px solid var(--accent);
   font-family:var(--font-d);font-size:15.5px;line-height:1.65;color:var(--text-primary)}
@@ -836,6 +838,7 @@ footer .ftlinks a:hover{color:var(--accent-hover);border-color:var(--accent)}
    .dcard 기본 규칙보다 뒤에 와야 이긴다. */
 @media (max-width:700px){
   .dcard{border:none;background:transparent;border-radius:0;padding:0}
+  .dcard .dshot{width:100%;margin:0 0 16px;border-radius:10px}
   .dgrid{gap:34px;margin-top:40px}
   .dcard blockquote{font-size:16px}
 }
