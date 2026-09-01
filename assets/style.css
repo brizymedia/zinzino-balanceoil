@@ -842,3 +842,8 @@ footer .ftlinks a:hover{color:var(--accent-hover);border-color:var(--accent)}
   .dgrid{gap:34px;margin-top:40px}
   .dcard blockquote{font-size:16px}
 }
+
+/* 가로(16:9) 영상용 변형. 기본 .promo 는 쇼츠(9:16) 기준이라 그대로 쓰면 잘린다. */
+.promo.wide .ytfacade,.promo.wide iframe{width:min(100%,780px);aspect-ratio:16/9}
+.promo.wide .ytfacade img{object-fit:cover}
+@media (max-width:700px){.promo.wide .ytfacade{border-radius:12px}}
