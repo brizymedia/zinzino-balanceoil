@@ -813,3 +813,29 @@ footer .ftlinks a:hover{color:var(--accent-hover);border-color:var(--accent)}
 .readgrid span{display:block;margin-top:8px;font-size:13.5px;color:var(--text-secondary)}
 @media (max-width:700px){.readgrid a{border:none;background:transparent;padding:14px 0;border-bottom:1px solid var(--line);border-radius:0}
   .readgrid a:hover{transform:none}}
+
+/* ===== 전문의 설명 영상 (#doctor) =====
+   방송 캡처 다음에 온다. 캡처가 의심을 던졌다면 여기서 원리를 설명한다.
+   카드 셋은 영상에서 실제로 나온 말만 인용한다. */
+#doctor .lede{max-width:60ch}
+.dgrid{margin:52px auto 0;display:grid;grid-template-columns:repeat(3,1fr);gap:18px;max-width:1060px;text-align:left}
+@media (max-width:900px){.dgrid{grid-template-columns:1fr;max-width:620px;gap:16px}}
+.dcard{border:1px solid var(--line);border-radius:16px;background:var(--panel-2);padding:26px 24px 28px;
+  display:flex;flex-direction:column}
+.dcard .dnum{font-family:var(--font-m);font-size:12px;letter-spacing:.16em;color:var(--accent);margin-bottom:14px}
+.dcard blockquote{margin:0 0 16px;padding-left:14px;border-left:2px solid var(--accent);
+  font-family:var(--font-d);font-size:15.5px;line-height:1.65;color:var(--text-primary)}
+.dcard h3{font-size:17px;font-weight:700;line-height:1.5;margin-bottom:9px}
+.dcard p{font-size:14.5px;line-height:1.75;color:var(--text-secondary);margin:0}
+.dcard p b{color:var(--text-primary)}
+.dbridge{margin:46px auto 0;text-align:center;font-family:var(--font-d);
+  font-size:clamp(18px,2.3vw,23px);line-height:1.85;color:var(--text-secondary);max-width:44ch}
+.dbridge b{color:var(--accent)}
+
+/* 모바일에서는 카드 상자를 없앤다. 다른 카드들과 같은 방침.
+   .dcard 기본 규칙보다 뒤에 와야 이긴다. */
+@media (max-width:700px){
+  .dcard{border:none;background:transparent;border-radius:0;padding:0}
+  .dgrid{gap:34px;margin-top:40px}
+  .dcard blockquote{font-size:16px}
+}
