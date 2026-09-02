@@ -39,7 +39,7 @@ body{font-family:var(--font-s);color:var(--text);line-height:1.6;word-break:keep
 }
 
 /* ══════════ 앞면 ══════════ */
-.hero{position:relative;height:96mm;overflow:hidden;background:var(--ink)}
+.hero{position:relative;height:91mm;overflow:hidden;background:var(--ink)}
 .hero img{width:100%;height:100%;object-fit:cover;display:block}
 .hero::after{content:"";position:absolute;inset:0;
   background:linear-gradient(180deg,rgba(11,20,29,.62) 0%,rgba(11,20,29,.12) 32%,rgba(11,20,29,.20) 62%,var(--paper) 99%)}
@@ -102,21 +102,21 @@ body{font-family:var(--font-s);color:var(--text);line-height:1.6;word-break:keep
 .blanks .rule{flex:1;border-bottom:0.35mm solid #46586A;height:5.4mm}
 
 /* ══════════ 뒷면 ══════════ */
-.b-top{background:var(--ink);color:#fff;padding:5mm 12mm 4.5mm}
-.b-top .zn{font-family:var(--font-d);font-weight:700;font-size:4.4mm;letter-spacing:.30em;color:#fff}
+.b-top{background:var(--ink);color:#fff;padding:5.5mm 12mm 5mm}
+.b-top .zn{font-family:var(--font-d);font-weight:700;font-size:5mm;letter-spacing:.30em;color:#fff}
 .b-top .zn b{color:var(--gold-lt)}
-.b-top h2{font-family:var(--font-d);font-weight:700;font-size:5.6mm;line-height:1.32;margin-top:2.2mm}
+.b-top h2{font-family:var(--font-d);font-weight:700;font-size:6.6mm;line-height:1.32;margin-top:2.6mm}
 .b-top h2 em{font-style:normal;color:var(--gold-lt)}
-.b-top p{font-size:2.95mm;color:#A9B6C2;margin-top:1.7mm;line-height:1.5}
+.b-top p{font-size:3.4mm;color:#A9B6C2;margin-top:2mm;line-height:1.5}
 
-.b-body{padding:3mm 12mm 0}
-.sec{margin-top:3.2mm}
+.b-body{padding:4.5mm 12mm 0}
+.sec{margin-top:4.4mm}
 .sec:first-child{margin-top:0}
-.sec-h{display:flex;align-items:center;gap:2.6mm;margin-bottom:2.5mm}
-.sec-h .num{width:5.6mm;height:5.6mm;border-radius:50%;background:var(--gold);color:#fff;
-  font-size:3.3mm;font-weight:800;display:flex;align-items:center;justify-content:center;flex:none}
-.sec-h h3{font-family:var(--font-d);font-weight:700;font-size:4.8mm;color:var(--ink)}
-.sec-h .memo{margin-left:auto;font-size:2.9mm;color:var(--text-2)}
+.sec-h{display:flex;align-items:center;gap:3mm;margin-bottom:3mm}
+.sec-h .num{width:6.4mm;height:6.4mm;border-radius:50%;background:var(--gold);color:#fff;
+  font-size:3.7mm;font-weight:800;display:flex;align-items:center;justify-content:center;flex:none}
+.sec-h h3{font-family:var(--font-d);font-weight:700;font-size:5.6mm;color:var(--ink)}
+.sec-h .memo{margin-left:auto;font-size:3.4mm;color:var(--text-2)}
 
 /* 한 병에 담긴 것 */
 .compo{display:flex;gap:3mm}
@@ -139,40 +139,40 @@ body{font-family:var(--font-s);color:var(--text);line-height:1.6;word-break:keep
 .synline b{color:var(--olive);font-weight:800}
 
 /* 비교표 */
-table.cmp{width:100%;border-collapse:collapse;font-size:3mm}
-table.cmp th,table.cmp td{padding:1.6mm 3mm;text-align:left;border-bottom:0.35mm solid var(--line);vertical-align:top}
-table.cmp thead th{font-size:2.9mm;font-weight:800;background:#F3EEE3;border-bottom:0.5mm solid var(--gold)}
+table.cmp{width:100%;border-collapse:collapse;font-size:3.5mm}
+table.cmp th,table.cmp td{padding:2.1mm 3.2mm;text-align:left;border-bottom:0.35mm solid var(--line);vertical-align:top}
+table.cmp thead th{font-size:3.5mm;font-weight:800;background:#F3EEE3;border-bottom:0.5mm solid var(--gold)}
 table.cmp thead th:last-child{color:var(--gold)}
-table.cmp td:first-child{width:22mm;font-weight:700;color:var(--ink)}
-table.cmp td:nth-child(2){width:56mm;color:var(--text-2)}
+table.cmp td:first-child{width:26mm;font-weight:700;color:var(--ink)}
+table.cmp td:nth-child(2){width:62mm;color:var(--text-2)}
 table.cmp td:last-child{font-weight:700;color:var(--ink)}
 table.cmp tbody tr:last-child td{border-bottom:0}
 
 /* 복용 방법 */
-.dose{border:0.5mm solid var(--gold);border-radius:3.5mm;background:#FFFDF7;padding:3.4mm 4mm}
-.dose .row{display:flex;gap:3.2mm;padding:1.9mm 0;border-top:0.35mm dashed var(--line)}
+.dose{border:0.5mm solid var(--gold);border-radius:4mm;background:#FFFDF7;padding:4mm 4.6mm}
+.dose .row{display:flex;gap:3.6mm;padding:2.4mm 0;border-top:0.35mm dashed var(--line)}
 .dose .row:first-child{border-top:0;padding-top:0}
 .dose .row:last-child{padding-bottom:0}
-.dose .q{width:20mm;flex:none;font-size:3.1mm;font-weight:800;color:var(--gold)}
-.dose .a{flex:1;font-size:2.95mm;line-height:1.5;color:var(--text)}
+.dose .q{width:23mm;flex:none;font-size:3.6mm;font-weight:800;color:var(--gold)}
+.dose .a{flex:1;font-size:3.4mm;line-height:1.55;color:var(--text)}
 .dose .a b{color:var(--ink);font-weight:700}
 .dose .a .warn{color:#B3402F;font-weight:700}
 
 /* 식약처 기능성 */
-.appr{background:var(--ink);border-radius:3.5mm;padding:3mm 4mm;color:#fff}
-.appr .hd{display:flex;align-items:baseline;gap:2.5mm;margin-bottom:2.8mm}
-.appr .hd b{font-size:3.4mm;font-weight:800;color:var(--gold-lt)}
-.appr .hd span{font-size:2.7mm;color:#8FA0AF}
-.appr .g{display:grid;grid-template-columns:1fr 1fr;gap:1.7mm 5mm}
-.appr .g p{font-size:2.85mm;line-height:1.4;padding-left:4mm;position:relative}
+.appr{background:var(--ink);border-radius:4mm;padding:4mm 4.6mm;color:#fff}
+.appr .hd{display:flex;align-items:baseline;gap:3mm;margin-bottom:3.2mm}
+.appr .hd b{font-size:4.4mm;font-weight:800;color:var(--gold-lt)}
+.appr .hd span{font-size:3.2mm;color:#8FA0AF}
+.appr .g{display:grid;grid-template-columns:1fr 1fr;gap:2.4mm 6mm}
+.appr .g p{font-size:3.4mm;line-height:1.4;padding-left:5mm;position:relative}
 .appr .g p::before{content:"\2713";position:absolute;left:0;color:var(--gold-lt);font-weight:800}
-.appr .ft{margin-top:2.2mm;padding-top:2mm;border-top:0.35mm solid #2A3947;font-size:2.6mm;color:#8FA0AF;line-height:1.48}
+.appr .ft{margin-top:3mm;padding-top:2.6mm;border-top:0.35mm solid #2A3947;font-size:3mm;color:#8FA0AF;line-height:1.5}
 
-.soon{margin-top:3.2mm;border:0.4mm dashed var(--gold);border-radius:2.5mm;
-  background:#FFFBF2;padding:2.8mm 3.4mm;font-size:2.85mm;line-height:1.5;color:var(--text-2)}
+.soon{margin-top:4.4mm;border:0.4mm dashed var(--gold);border-radius:3mm;
+  background:#FFFBF2;padding:3.6mm 4.4mm;font-size:3.3mm;line-height:1.55;color:var(--text-2)}
 .soon b{color:var(--gold);font-weight:800}
 
-.legal{margin:3.5mm 12mm 0;font-size:2.45mm;line-height:1.45;color:#7A8794}
+.legal{margin:4.4mm 12mm 0;font-size:2.75mm;line-height:1.5;color:#7A8794}
 .foot.b{padding-top:5mm;padding-bottom:4.5mm}
 </style>
 </head>
@@ -298,14 +298,6 @@ table.cmp tbody tr:last-child td{border-bottom:0}
 
   <p class="legal">본 제품은 질병의 예방 및 치료를 위한 의약품이 아닙니다. 섭취량은 진지노 제품 안내 기준이며 개인 상태에 따라 달라질 수 있습니다. 질환이 있거나 약을 드시는 분, 임신·수유 중이신 분은 전문가와 상의하십시오. 함량과 원료 정보는 진지노 제품 자료 기준입니다. 본 인쇄물은 진지노 독립 파트너가 제작한 안내물이며 본사의 공식 발행물이 아닙니다.</p>
 
-  <div class="foot b">
-    <div class="qr"><svg viewBox="0 0 450 450" xmlns="http://www.w3.org/2000/svg" class="segno"><path transform="scale(10)" class="qrline" stroke="#0b141d" d="M2 2.5h7m4 0h1m1 0h1m3 0h3m2 0h1m1 0h1m1 0h7m-33 1h1m5 0h1m1 0h1m3 0h1m2 0h1m1 0h3m1 0h2m3 0h1m5 0h1m-33 1h1m1 0h3m1 0h1m1 0h1m1 0h1m2 0h1m1 0h1m2 0h5m1 0h1m1 0h1m1 0h3m1 0h1m-33 1h1m1 0h3m1 0h1m1 0h1m1 0h1m1 0h1m6 0h1m1 0h4m1 0h1m1 0h3m1 0h1m-33 1h1m1 0h3m1 0h1m1 0h2m1 0h1m1 0h2m1 0h1m1 0h1m1 0h1m2 0h2m1 0h1m1 0h3m1 0h1m-33 1h1m5 0h1m1 0h1m1 0h1m3 0h4m3 0h2m1 0h1m1 0h1m5 0h1m-33 1h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7m-23 1h2m1 0h2m1 0h3m-17 1h1m2 0h6m1 0h1m1 0h1m8 0h3m1 0h5m-31 1h2m1 0h2m4 0h2m1 0h2m1 0h1m2 0h1m1 0h1m1 0h1m1 0h3m1 0h4m-32 1h1m2 0h4m2 0h1m1 0h2m3 0h2m4 0h2m2 0h3m2 0h1m-33 1h1m1 0h1m1 0h1m4 0h2m1 0h1m2 0h3m1 0h1m1 0h1m4 0h2m1 0h1m1 0h2m-33 1h2m2 0h1m1 0h2m2 0h2m3 0h4m2 0h1m1 0h2m1 0h4m2 0h1m-31 1h2m3 0h2m2 0h5m1 0h2m1 0h2m1 0h4m2 0h2m1 0h1m-31 1h3m1 0h1m1 0h1m3 0h1m1 0h1m2 0h4m2 0h1m1 0h1m1 0h1m1 0h1m2 0h1m-33 1h3m2 0h1m1 0h2m1 0h1m2 0h1m2 0h5m1 0h1m6 0h1m1 0h1m-32 1h2m1 0h2m1 0h2m1 0h1m1 0h1m3 0h1m2 0h2m2 0h1m3 0h2m1 0h1m-27 1h1m1 0h1m1 0h1m1 0h2m2 0h2m1 0h2m2 0h2m1 0h1m2 0h2m2 0h1m1 0h1m-32 1h2m1 0h3m2 0h1m1 0h1m1 0h1m1 0h1m4 0h1m1 0h2m1 0h2m2 0h4m-33 1h3m1 0h2m1 0h1m1 0h3m3 0h1m4 0h1m2 0h1m5 0h1m1 0h2m-33 1h4m2 0h6m1 0h7m3 0h5m-26 1h1m11 0h1m2 0h1m6 0h1m4 0h1m2 0h1m-33 1h2m3 0h2m1 0h1m1 0h1m1 0h1m3 0h3m3 0h1m1 0h3m5 0h1m-29 1h2m2 0h2m4 0h2m1 0h1m2 0h1m1 0h3m2 0h1m1 0h1m1 0h1m-32 1h5m1 0h2m1 0h1m1 0h1m1 0h1m1 0h1m3 0h2m3 0h5m2 0h1m-24 1h2m2 0h2m5 0h1m3 0h2m3 0h5m-33 1h7m1 0h1m1 0h4m1 0h2m4 0h2m1 0h1m1 0h1m1 0h1m3 0h1m-33 1h1m5 0h1m1 0h4m2 0h1m1 0h1m1 0h2m2 0h3m3 0h2m1 0h2m-33 1h1m1 0h3m1 0h1m6 0h4m1 0h11m-29 1h1m1 0h3m1 0h1m2 0h1m3 0h1m1 0h1m1 0h1m1 0h1m1 0h5m1 0h2m1 0h2m-32 1h1m1 0h3m1 0h1m1 0h2m4 0h1m2 0h2m3 0h1m5 0h1m2 0h2m-33 1h1m5 0h1m4 0h2m2 0h2m1 0h1m1 0h2m2 0h1m1 0h1m2 0h1m-30 1h7m2 0h6m2 0h3m1 0h1m2 0h2m2 0h1m3 0h1"/></svg></div>
-    <div class="info">
-      <p class="site">더 자세히 보기</p>
-      <p class="url">www.zinzinoshop.co.kr</p>
-      <p class="say">제품 구성·먹는 법·구매 순서를<br>한곳에 정리해 두었습니다</p>
-    </div>
-  </div>
 </section>
 
 </body>
