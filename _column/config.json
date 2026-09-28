@@ -210,6 +210,59 @@
     "name": "본업 있는 직장인의 온라인 부업 알아보기",
     "keyword": "{city} 직장인 부업",
     "angle": "GUIDE.md 2장 · 5장(방문판매법) 그대로. 소득 표현 금지, 도구 링크"
+   },
+   {
+    "id": "omega3-storage",
+    "name": "오메가3 보관법 — 개봉 후 · 여름철 · 여행 중",
+    "keyword": "오메가3 보관법",
+    "angle": "산패 · 냉장 보관 등 일반 요령, 공식 출처만",
+    "city": false
+   },
+   {
+    "id": "fish-intake",
+    "name": "생선 섭취 가이드 — 등푸른생선 얼마나 자주",
+    "keyword": "{city} 등푸른생선",
+    "angle": "국가 식생활지침 · 식약처 수산물 섭취 안내 기준, 수은 주의 대상 포함"
+   },
+   {
+    "id": "elderly-parents",
+    "name": "부모님 영양제 챙길 때 확인할 것",
+    "keyword": "부모님 영양제",
+    "angle": "복용 약 확인 · 라벨 · 의사 상담 강조. 질병 표현 금지",
+    "city": false
+   },
+   {
+    "id": "omega3-kids",
+    "name": "어린이 · 청소년 오메가3 라벨 읽기",
+    "keyword": "어린이 오메가3",
+    "angle": "섭취 대상 · 주의사항 표시 중심, 식약처 기준만",
+    "city": false
+   },
+   {
+    "id": "vegan-omega3",
+    "name": "식물성 오메가3(ALA)와 어유 차이",
+    "keyword": "식물성 오메가3",
+    "angle": "원료 차이 일반 설명, 공식 출처",
+    "city": false
+   },
+   {
+    "id": "checkup-reading",
+    "name": "건강검진 결과표 읽는 순서 — 지질 항목 중심",
+    "keyword": "{city} 건강검진 결과",
+    "angle": "국민건강보험공단 · 질병관리청 기준만, 의사 상담"
+   },
+   {
+    "id": "hfs-overdose",
+    "name": "영양제 여러 개 겹쳐 먹을 때 확인할 것",
+    "keyword": "영양제 같이 먹어도 되나",
+    "angle": "중복 성분 · 상한 섭취량(식약처) · 약사 상담",
+    "city": false
+   },
+   {
+    "id": "partner-tools",
+    "name": "부업을 도구로 관리하는 법 — 명단 · 문구 · 계산기",
+    "keyword": "{city} 온라인 부업",
+    "angle": "GUIDE 3장 도구 · 5장 방문판매법 그대로"
    }
   ]
  }
