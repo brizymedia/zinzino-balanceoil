@@ -263,6 +263,85 @@
     "name": "부업을 도구로 관리하는 법 — 명단 · 문구 · 계산기",
     "keyword": "{city} 온라인 부업",
     "angle": "GUIDE 3장 도구 · 5장 방문판매법 그대로"
+   },
+   {
+    "id": "omega3-dose",
+    "name": "오메가3 하루 섭취량, 라벨 기준으로 읽는 법",
+    "keyword": "오메가3 하루 섭취량",
+    "angle": "EPA+DHA 합계 · 식약처 기준(0.5~2g)만",
+    "city": false
+   },
+   {
+    "id": "omega3-quality",
+    "name": "오메가3 산패도 · 원료 확인하는 법",
+    "keyword": "오메가3 산패",
+    "angle": "산가 · 과산화물가 등 공식 기준 범위만",
+    "city": false
+   },
+   {
+    "id": "rtg-ee",
+    "name": "rTG · EE 오메가3 형태 차이",
+    "keyword": "rTG 오메가3",
+    "angle": "형태 설명, 공식 · 학술 출처만, 우열 단정 금지",
+    "city": false
+   },
+   {
+    "id": "diet-pattern",
+    "name": "지중해식 식단과 올리브오일",
+    "keyword": "{city} 지중해식 식단",
+    "angle": "식생활 일반 정보, 질병 표현 금지"
+   },
+   {
+    "id": "winter-routine",
+    "name": "겨울철 직장인 생활 습관 점검",
+    "keyword": "직장인 겨울 건강 습관",
+    "angle": "활동 · 수면 · 햇빛, 공식 지침",
+    "city": false
+   },
+   {
+    "id": "label-terms",
+    "name": "건강기능식품 라벨 용어 사전",
+    "keyword": "건강기능식품 라벨",
+    "angle": "기능성 원료 · 1일 섭취량 · 주의사항 용어 풀이",
+    "city": false
+   },
+   {
+    "id": "gift-hfs",
+    "name": "선물용 건강기능식품 고를 때",
+    "keyword": "{city} 건강기능식품 선물",
+    "angle": "인증마크 · 유통기한 · 받는 사람 복용 약 확인"
+   },
+   {
+    "id": "online-buy-check",
+    "name": "건강기능식품 온라인 구매 시 확인할 것",
+    "keyword": "건강기능식품 온라인 구매",
+    "angle": "판매업 신고 · 허위광고 구별(식약처)",
+    "city": false
+   },
+   {
+    "id": "test-kit-howto",
+    "name": "손끝 채혈 검사 키트 쓰는 법과 주의",
+    "keyword": "{city} 혈액 검사 키트",
+    "angle": "facts.json 범위만, 국내 출시 상태 명시"
+   },
+   {
+    "id": "business-legal",
+    "name": "다단계 · 네트워크 마케팅 합법 여부 확인법",
+    "keyword": "{city} 네트워크 마케팅",
+    "angle": "방문판매법 · 공정위 등록 조회, 소득 표현 금지"
+   },
+   {
+    "id": "partner-faq",
+    "name": "파트너 활동 자주 묻는 질문 — 시간 · 비용 · 해지",
+    "keyword": "네트워크 마케팅 해지",
+    "angle": "방문판매법 청약철회 · 탈퇴 권리, 공식 출처",
+    "city": false
+   },
+   {
+    "id": "eating-out",
+    "name": "외식 · 배달 많은 직장인 식단 균형",
+    "keyword": "{city} 직장인 식단",
+    "angle": "보건복지부 식생활지침 기준"
    }
   ]
  }
