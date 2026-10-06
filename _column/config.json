@@ -342,6 +342,72 @@
     "name": "외식 · 배달 많은 직장인 식단 균형",
     "keyword": "{city} 직장인 식단",
     "angle": "보건복지부 식생활지침 기준"
+   },
+   {
+    "id": "vitd-winter",
+    "name": "겨울철 비타민 D — 햇빛 · 음식 · 섭취 기준",
+    "keyword": "겨울 비타민 D",
+    "angle": "한국인 영양소 섭취기준 수치만, 질병 표현 금지",
+    "city": false
+   },
+   {
+    "id": "fish-recipe",
+    "name": "생선 반찬 손질 · 보관 · 조리 요령",
+    "keyword": "{city} 생선 반찬",
+    "angle": "식약처 수산물 안전 · 식생활 정보"
+   },
+   {
+    "id": "nutrition-label-math",
+    "name": "영양성분표 %기준치 계산하는 법",
+    "keyword": "영양성분 기준치",
+    "angle": "식약처 표시기준",
+    "city": false
+   },
+   {
+    "id": "traveler-hfs",
+    "name": "해외여행 때 영양제 챙기는 법 — 반입 · 보관",
+    "keyword": "해외여행 영양제",
+    "angle": "관세청 · 각국 반입 기준 공식만",
+    "city": false
+   },
+   {
+    "id": "kids-hfs-label",
+    "name": "어린이 건강기능식품 고를 때 확인할 것",
+    "keyword": "어린이 영양제",
+    "angle": "섭취 대상 표시 · 식약처",
+    "city": false
+   },
+   {
+    "id": "hfs-adverse",
+    "name": "건강기능식품 이상사례 신고하는 법",
+    "keyword": "건강기능식품 이상사례",
+    "angle": "식약처 1577-2488 공식 절차",
+    "city": false
+   },
+   {
+    "id": "partner-contract",
+    "name": "네트워크 마케팅 가입 전 계약서 확인할 것",
+    "keyword": "{city} 다단계 계약",
+    "angle": "방문판매법 · 공제조합 · 청약철회, 소득 표현 금지"
+   },
+   {
+    "id": "home-office-meal",
+    "name": "재택 · 사무실 점심 식단 균형 잡기",
+    "keyword": "{city} 직장인 점심",
+    "angle": "식생활지침 · 나트륨 줄이기 공식 자료"
+   },
+   {
+    "id": "seafood-mercury",
+    "name": "임산부 · 어린이 생선 섭취 가이드",
+    "keyword": "생선 수은 섭취 기준",
+    "angle": "식약처 수은 섭취 권고 공식",
+    "city": false
+   },
+   {
+    "id": "oil-cooking",
+    "name": "조리용 기름 고르기 — 발연점 · 보관",
+    "keyword": "{city} 식용유 고르기",
+    "angle": "식약처 · 농진청 공식 정보"
    }
   ]
  }
