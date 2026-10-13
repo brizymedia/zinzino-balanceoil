@@ -1,23 +1,20 @@
-# 진지노 밸런스 오일 플러스 | www.zinzinoshop.co.kr
+# www.zinzinoshop.co.kr — 검색 비노출 (모든 페이지 noindex 메타 적용)
+# 일반 검색봇은 크롤을 허용해야 noindex 를 읽고 색인에서 제거한다
+
+User-agent: GPTBot
+Disallow: /
+
+User-agent: ChatGPT-User
+Disallow: /
+
+User-agent: PerplexityBot
+Disallow: /
+
+User-agent: ClaudeBot
+Disallow: /
+
+User-agent: Google-Extended
+Disallow: /
+
 User-agent: *
 Allow: /
-Disallow: /order.html
-
-# 네이버
-User-agent: Yeti
-Allow: /
-
-# AI 검색 크롤러도 허용 (AI 검색에 노출되도록)
-User-agent: GPTBot
-Allow: /
-User-agent: ChatGPT-User
-Allow: /
-User-agent: PerplexityBot
-Allow: /
-User-agent: ClaudeBot
-Allow: /
-User-agent: Google-Extended
-Allow: /
-
-Sitemap: https://www.zinzinoshop.co.kr/sitemap.xml
-Sitemap: https://www.zinzinoshop.co.kr/column/sitemap.xml
